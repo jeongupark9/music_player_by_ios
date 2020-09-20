@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "SongListViewController.viewDidLoad():SongListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "songs[0].songURL as URL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.albums">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SongCell.awakeFromNib():SongListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.song">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewWillAppear(_:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIApplication.shared.windows">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CurrentPlayViewController.viewDidLoad():CurrentPlayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "volumeSlider.value">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.frame.width">
+            </PersistentString>
+            <PersistentString
+               value = "self.musicControlLayout.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "self.musicControlLayout.frame.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SongListViewController.setData(_:):SongListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "songs[2].trackNum.integerValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AlbumCell.clickAlbum(_:):AlbumCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.viewController.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AlbumCell.setAlbumData(albuminfo:):AlbumCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "main:AppDelegate.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CurrentPlayViewController.viewWillAppear(_:):CurrentPlayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.musicControlLayout.frame.size.width - 40">
+            </PersistentString>
+            <PersistentString
+               value = "self.musicControlLayout.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SongQuery.get(songCategory:):SongQuery.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "song.value(forKey: MPMediaItemPropertyAlbumTrackCount)">
+            </PersistentString>
+            <PersistentString
+               value = "song.value(forKey: MPMediaItemPropertyAlbumTrackCount) as! String">
+            </PersistentString>
+            <PersistentString
+               value = "albumItems[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MPMediaQuery.songs">
+            </PersistentString>
+            <PersistentString
+               value = " allAlbum.collections">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
