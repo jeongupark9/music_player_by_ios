@@ -83,8 +83,10 @@ class SongListViewController : UIViewController, UITableViewDelegate, UITableVie
         }
     }
     @IBAction func clickRandomPlay(_ send : UIButton){
-        musicHelper.isShuffle = !musicHelper.isShuffle
-        shuffleImg.alpha =  musicHelper.isShuffle ? 1 : 0.1
+        if musicHelper.isRepeat {
+            musicHelper.isShuffle = !musicHelper.isShuffle
+            shuffleImg.alpha =  musicHelper.isShuffle ? 1 : 0.1
+        }
 
     }
     @IBAction func clickBackBtn(_ sender: Any) {
@@ -92,7 +94,11 @@ class SongListViewController : UIViewController, UITableViewDelegate, UITableVie
     }
     @IBAction func clickRepeat(_ sender: Any) {
         musicHelper.isRepeat = !musicHelper.isRepeat
-        repeatImg.alpha =  musicHelper.isRepeat ? 1 : 0.1
+        repeatImg.alpha = musicHelper.isRepeat ? 1 : 0.1
+        if musicHelper.isRepeat == false {
+            musicHelper.isShuffle = false
+            shuffleImg.alpha = musicHelper.isShuffle ? 1 : 0.1
+        }
     }
 }
 

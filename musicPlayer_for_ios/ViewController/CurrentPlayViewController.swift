@@ -118,12 +118,18 @@ class CurrentPlayViewController : UIViewController{
         }
     }
     @IBAction func clickRepeat(_ sender: Any) {
-        repeatBtn.alpha = musichelper.isRepeat ? 0.1 : 1
         musichelper.isRepeat = !musichelper.isRepeat
+        repeatBtn.alpha = musichelper.isRepeat ? 1 : 0.1
+        if musichelper.isRepeat == false {
+            musichelper.isShuffle = false
+            shuffleBtn.alpha = musichelper.isShuffle ? 1 : 0.1
+        }
     }
     @IBAction func clickShuffle(_ sender: Any) {
-        shuffleBtn.alpha = musichelper.isShuffle ? 0.1 : 1
-        musichelper.isShuffle = !musichelper.isShuffle
+        if musichelper.isRepeat {
+            musichelper.isShuffle = !musichelper.isShuffle
+            shuffleBtn.alpha = musichelper.isShuffle ? 0.1 : 1
+        }
     }
     func convertNSTimeInterval2String(_ time:TimeInterval) -> String {
         let min = Int(time/60)
