@@ -10,11 +10,11 @@ import Foundation
 import MediaPlayer
 
 struct SongInfo {
-
+    
     var albumTitle: String
     var artistName: String
     var songTitle:  String
-
+    
     var songId   :  NSNumber
     var songURL : NSURL
     var trackNum : NSNumber
@@ -22,7 +22,7 @@ struct SongInfo {
 }
 
 struct AlbumInfo {
-
+    
     var albumTitle: String
     var albumArtist : String
     var albumartwork : UIImage?
@@ -30,44 +30,33 @@ struct AlbumInfo {
 }
 
 class SongQuery {
-
+    
     func get(songCategory: String) -> [AlbumInfo] {
-
+        
         var albums: [AlbumInfo] = []
-         let albumsQuery: MPMediaQuery
-        if songCategory == "Artist" {
-            albumsQuery = MPMediaQuery.artists()
-
-        } else if songCategory == "Album" {
-            albumsQuery = MPMediaQuery.albums()
-
-        } else {
-            albumsQuery = MPMediaQuery.albums()
-        }
-
-
-       // let albumsQuery: MPMediaQuery = MPMediaQuery.albums()
+        let albumsQuery: MPMediaQuery
+        albumsQuery = MPMediaQuery.albums()
+        
         let albumItems: [MPMediaItemCollection] = albumsQuery.collections! as [MPMediaItemCollection]
-      //  var album: MPMediaItemCollection
+        
         for album in albumItems {
-
+            
             let albumItems: [MPMediaItem] = album.items as [MPMediaItem]
-           // var song: MPMediaItem
-
+            
             var songs: [SongInfo] = []
-
+            
             var albumTitle: String = ""
             var albumArtist : String = ""
             var albumartwork : UIImage? = nil
-
+            
             for song in albumItems {
-           
+                
                 albumTitle = song.value( forProperty: MPMediaItemPropertyAlbumTitle ) as! String
                 albumArtist = song.value( forProperty: MPMediaItemPropertyArtist ) as! String
                 if let artwork: MPMediaItemArtwork = song.value(forProperty: MPMediaItemPropertyArtwork) as? MPMediaItemArtwork{
                     albumartwork = artwork.image(at: CGSize(width: 200, height: 200))
                 }
-    
+                
                 let songInfo: SongInfo = SongInfo(
                     albumTitle: song.value( forProperty: MPMediaItemPropertyAlbumTitle ) as! String,
                     artistName: song.value( forProperty: MPMediaItemPropertyArtist ) as! String,
@@ -79,33 +68,19 @@ class SongQuery {
                 )
                 songs.append( songInfo )
             }
-
+            
             let albumInfo: AlbumInfo = AlbumInfo(
-
+                
                 albumTitle: albumTitle,
                 albumArtist: albumArtist,
                 albumartwork: albumartwork,
                 songs: songs
             )
-
+            
             albums.append( albumInfo )
         }
-
+        
         return albums
-
+        
     }
-
-    func getItem( songId: NSNumber ) -> MPMediaItem {
-
-        let property: MPMediaPropertyPredicate = MPMediaPropertyPredicate( value: songId, forProperty: MPMediaItemPropertyPersistentID )
-
-        let query: MPMediaQuery = MPMediaQuery()
-        query.addFilterPredicate( property )
-
-        let items: [MPMediaItem] = query.items! as [MPMediaItem]
-
-        return items[items.count - 1]
-
-    }
-
 }
